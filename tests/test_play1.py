@@ -22,6 +22,7 @@ def test_run(browser_context):
 def test_example(browser_context):
     page = browser_context.new_page()
     page.goto("https://www.alx.pl/")
+    page.wait_for_timeout(1000)
     page.get_by_text("Zezwól na wszystkie").click()
     page.get_by_role("textbox").click()
     page.get_by_role("textbox").fill("devops")
